@@ -1,0 +1,43 @@
+.col-md-1, .col-md-9 {
+    padding-left: 9px !important;
+    padding-right: 9px !important;
+}
+
+.searchTermsBox {
+    z-index: 99999;
+    position: absolute;
+    width: 100%;
+    > ul {
+        min-height: 400px;
+        height: auto;
+        background: linear-gradient(to bottom,rgba(255,255,255,.99) 0,rgba(255,255,255,.624) 60%,rgba(255,255,255,.58) 70%,rgba(255,255,255,.37) 80%,rgba(255,255,255,.15) 80%,rgba(255,255,255,.01) 90%);
+        list-style-type: none;
+        > li {
+            cursor: pointer;
+            a {
+                color: #333;
+                font-size: 30px;
+                font-weight: 700;
+                letter-spacing: -0.05em;
+                line-height: 33px;
+                text-decoration: none;
+            }
+            
+        }
+    }
+
+
+}
+
+.carousel {
+    width: 2080px;
+    float: left;
+    .item {
+        background: #e8e8e8;
+        border-radius: 5px;
+        height: 280px;
+        overflow: hidden;
+        width: 456px;
+        margin: 0 12px;
+    }
+}

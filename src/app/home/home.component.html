@@ -1,0 +1,48 @@
+<div class="row align-items-center">
+    <div class="col-md-9">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><i class="fas fa-search"></i></span>
+        </div>
+        <input type="text" name="txtSearch" id="txtSearch" class="form-control" [(ngModel)]="currentSearchTerm" (keyup)="autoCompleteTerms($event)">
+        <div class="input-group-append">
+            <span class="input-group-text"><i class="fas fa-paint-brush"></i></span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    <div class="col-md-1">
+      <button class="btn btn-light">Log in</button>
+    </div>
+    <div class="col-md-1">
+      <div class="dropdown">
+        <button type="button" class="btn btn-light" id="dropdownMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-ellipsis-h"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+          <button class="dropdown-item" type="button">Log in</button>
+          <button class="dropdown-item" type="button">About</button>
+          <button class="dropdown-item" type="button">Blog</button>
+          <button class="dropdown-item" type="button">Help</button>
+          <button class="dropdown-item" type="button">Sitemap</button>
+          <button class="dropdown-item" type="button">Advertising</button>
+          <button class="dropdown-item" type="button">RSS</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row searchTermsBox" *ngIf="termsFound.length > 0">
+      <ul class="col-md-12">
+        <li *ngFor="let term of termsFound" (click)="selectTerm(term)">
+          <a>{{ term }}</a>
+        </li>
+      </ul>
+  </div>
+  <div class="row">
+    <div class="col-md-4"><img width="380" height="180" src="https://s.dspncdn.com/a1/webapp/img/content/featured/welcome_signup.jpg"></div>
+    <div class="col-md-4"><img width="380" height="180" src="https://s.dspncdn.com/a1/webapp/img/content/featured/color-search-is-back-bg.jpg"></div>
+    <div class="col-md-4"><img width="380" height="180" src="https://s.dspncdn.com/a1/webapp/img/content/featured/follow_instagram.jpg"></div>
+  </div>
+

@@ -1,0 +1,16 @@
+.container {
+    padding: 60px 15px 0;
+    width: 100%;
+}
+
+.logoContainer {
+    :active, :hover {
+        text-decoration: none;
+    }
+
+    .logo {
+        color: black;
+        font-weight: bold;
+        font-family: 'Helvetica';
+    }
+}
