@@ -8,7 +8,6 @@ import { TermsService } from '../services/terms.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  searchTerms: Array<string> = ['Random', 'Real', 'Record', 'Red', 'Report'];
   termsFound: Array<string> = [];
   currentSearchTerm: string = '';
 
@@ -20,10 +19,9 @@ export class HomeComponent implements OnInit {
 
   public autoCompleteTerms(event) {
     if(this.currentSearchTerm.length > 0) {
-      this.termsFound = this.searchTerms.filter(value => { 
-        if(value.toLowerCase().indexOf(this.currentSearchTerm.toLowerCase()) > -1)
-          return value;
-      });
+      this.termService.SearchTerm(this.currentSearchTerm).subscribe(x => {
+        this.termsFound = x;
+      })
     } else {
       this.termsFound = [];
     }
