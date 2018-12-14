@@ -10,6 +10,7 @@ import { TermsService } from '../services/terms.service';
 export class HomeComponent implements OnInit {
   termsFound: Array<string> = [];
   currentSearchTerm: string = '';
+  isSearching: boolean = false;
 
   constructor(private termService: TermsService) { }
 
@@ -19,9 +20,11 @@ export class HomeComponent implements OnInit {
 
   public autoCompleteTerms(event) {
     if(this.currentSearchTerm.length > 0) {
+      this.isSearching = true;
       this.termService.SearchTerm(this.currentSearchTerm).subscribe(x => {
         this.termsFound = x;
-      })
+        this.isSearching = false;
+      });
     } else {
       this.termsFound = [];
     }

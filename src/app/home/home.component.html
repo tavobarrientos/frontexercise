@@ -2,11 +2,22 @@
     <div class="col-md-9">
       <div class="input-group">
         <div class="input-group-prepend">
-          <span class="input-group-text"><i class="fas fa-search"></i></span>
+          <span class="input-group-text">
+            <i 
+              *ngIf="!isSearching"
+              class="fas fa-search"
+            ></i>
+            <i 
+            *ngIf="isSearching"
+            class="fas fa-spinner fa-pulse"
+          ></i>
+          </span>
         </div>
         <input type="text" name="txtSearch" id="txtSearch" class="form-control" [(ngModel)]="currentSearchTerm" (keyup)="autoCompleteTerms($event)">
         <div class="input-group-append">
-            <span class="input-group-text"><i class="fas fa-paint-brush"></i></span>
+            <span class="input-group-text">
+              <i class="fas fa-paint-brush"></i>
+            </span>
         </div>
       </div>
     </div>
